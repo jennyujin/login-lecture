@@ -1,4 +1,4 @@
-"use strict";
+"use strict";  
 
 const fs = require("fs").promises;
 
@@ -14,7 +14,7 @@ class UserStorage {
 
                 return userInfo;
     }
-    
+
    static getUsers(...fields) {
         // const users = this.#users;
         const newUsers = fields.reduce((newUsers, field) => {
