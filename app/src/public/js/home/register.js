@@ -10,9 +10,8 @@ registerBtn.addEventListener("click", register);
 
 function register(){
     if (!id.value) return alert("Please insert the id")
-    if (psword.value !== confirmPsword.value){
+    if (psword.value !== confirmPsword.value)
         return alert("password is not matched");
-    }
 
     const req = {
         id: id.value,
@@ -32,6 +31,7 @@ function register(){
         if (res.success){
             location.href = "/login";
         } else {
+            if (res.err) return alert(res.err);
             alert(res.msg);
         }
     })

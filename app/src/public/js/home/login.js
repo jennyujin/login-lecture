@@ -7,6 +7,10 @@ const id = document.querySelector("#id"),
 loginBtn.addEventListener("click", login);
 
 function login(){
+    if (!id.value) return alert("Please insert the id")
+    if (!psword.value)
+        return alert("password is not matched");
+
     const req = {
         id: id.value,
         psword: psword.value,
@@ -24,6 +28,7 @@ function login(){
         if (res.success){
             location.href = "/";
         } else {
+            if (res.err) return alert(res.err);
             alert(res.msg);
         }
     })
