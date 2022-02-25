@@ -7,9 +7,8 @@ const id = document.querySelector("#id"),
 loginBtn.addEventListener("click", login);
 
 function login(){
-    if (!id.value) return alert("Please insert the id")
-    if (!psword.value)
-        return alert("password is not matched");
+    if (!id.value) return alert("Please insert the id");
+    if (!psword.value) return alert("password is not matched");
 
     const req = {
         id: id.value,
